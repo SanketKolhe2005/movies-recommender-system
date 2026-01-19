@@ -1,3 +1,13 @@
+import os
+import streamlit as st
+import pickle
+
+if not os.path.exists("similarity.pkl"):
+    st.error("Similarity file not found. This app is for demo only.")
+    st.stop()
+
+similarity = pickle.load(open("similarity.pkl", "rb"))
+
 import streamlit as st
 import pickle
 import pandas as pd
